@@ -4,7 +4,7 @@
 
 
 
-1. Merge Two Sorted Lists :
+1. Merge Two Sorted Lists : (que link: https://leetcode.com/problems/merge-two-sorted-lists )
 
     Sample Test case : 
            Input: list1 = [1,2,4], list2 = [1,3,4]
@@ -39,7 +39,7 @@
      }
 
  
-2. Remove Duplicates from Sorted List.
+2. Remove Duplicates from Sorted List. (que link : https://leetcode.com/problems/remove-duplicates-from-sorted-list ).
 
     Sample Test case : 
              Input: head = [1,1,2]
@@ -69,7 +69,7 @@
                }
             } 
 
-3. Linked List Cycle (floyd's cycle).
+3. Linked List Cycle (floyd's cycle). (que link : https://leetcode.com/problems/linked-list-cycle ).
 
       Sample Test case : 
 
