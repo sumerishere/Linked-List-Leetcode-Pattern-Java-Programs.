@@ -1,0 +1,44 @@
+
+3. Linked List Cycle (floyd's cycle). (que link : https://leetcode.com/problems/linked-list-cycle ).
+
+      Sample Test case : 
+
+          Input: head = [3,2,0,-4], pos = 1
+          Output: true
+          Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
+   
+     Solution :
+              public class Solution {
+                 public boolean hasCycle(ListNode head) {
+
+               // 1. Slow-Fast Pointer approach or floyd's appraoch.
+        
+    
+                    ListNode slow_pnt = head;   
+                    ListNode fast_pnt = head;
+        
+                    while(fast_pnt!= null && fast_pnt.next != null){
+
+                         if(slow_pnt == fast_pnt.next) return true;
+            
+                         slow_pnt = slow_pnt.next;
+                         fast_pnt = fast_pnt.next.next;
+                    }
+                    return false;
+        
+
+                 // 1. HashSet--> using hashset approach checking the repeation of pointer to find the LL cycle.
+        
+                     HashSet<ListNode> set =  new HashSet<>();
+        
+                     ListNode pointer = head;
+        
+                     while(pointer != null){
+
+                        if(set.contains(pointer)) return true;
+                        set.add(pointer);
+                        pointer = pointer.next;
+                     }
+                     return false;
+                 }
+               }
