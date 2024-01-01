@@ -1,0 +1,33 @@
+5. Remove Linked List Elements (https://leetcode.com/problems/remove-linked-list-elements/ )
+
+
+  Sample Test case : 
+                    Input: head = [1,2,6,3,4,5,6], val = 6
+                    Output: [1,2,3,4,5]
+
+   Solution :
+              class Solution {
+                public ListNode removeElements(ListNode head, int val) {
+         
+                   ListNode res_list = head;
+    
+                   if(head==null){
+                      return head;
+                   }
+        
+                   while(head != null && head.val==val){   //pointing to the head fst if it head.val == val.
+            
+                       head = head.next;  // removing head val if ==.
+                   }   
+        
+                   while(res_list != null && res_list.next != null ){  //iterating node with ListNode res.
+
+                     if(res_list.next.val==val){    //checking equal values 
+                          res_list.next = res_list.next.next;
+                    }else{
+                          res_list = res_list.next;
+                    }
+                  }
+                  return head;  //final list.
+               }
+             }
