@@ -1,0 +1,31 @@
+8. Middle of the Linked List (https://leetcode.com/problems/middle-of-the-linked-list/).
+
+
+   Sample Test Case : 
+                   
+        Input: head = [1,2,3,4,5]
+	Output: [3,4,5]
+
+	Explanation: The middle node of the list is node 3.
+
+
+    Solution:
+           
+	     class Solution {
+   		  public ListNode middleNode(ListNode head) {
+        
+       		     if(head==null){
+                       return head;
+       		     }
+        
+      		     ListNode slow_p = head;
+        	     ListNode fast_p = head;
+        
+       		     while(fast_p != null && fast_p.next != null){
+         		slow_p = slow_p.next;
+            	        fast_p = fast_p.next.next;  
+       		    }
+       	   	    return slow_p ;
+   		 }
+	     }
+     

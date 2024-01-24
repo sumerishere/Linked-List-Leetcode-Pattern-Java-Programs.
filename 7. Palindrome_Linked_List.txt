@@ -1,0 +1,57 @@
+7. Palindrome Linked List (https://leetcode.com/problems/palindrome-linked-list).
+
+
+   Sample Test Case:
+                
+               Input:  head = [1,2,2,1]
+               Output: true
+
+
+        Solution :
+                    
+		class Solution {
+    		   public boolean isPalindrome(ListNode head) {
+        
+        
+        	     if(head==null){
+          		return false;
+         	     }
+    
+        	     ListNode slow = head;
+           	     ListNode fast = head;
+        
+          	     while(fast != null && fast.next != null){
+         	       slow = slow.next;
+         	       fast = fast.next.next;
+       		     }
+       	 
+         	    ListNode curr = slow;
+          	    ListNode prev = null ; 
+       
+          	    boolean  flag = true;
+        
+        	    while(curr!=null){
+            
+          	      ListNode next = curr.next;
+                      curr.next = prev;
+         	      prev = curr;
+          	      curr = next;
+       	            }
+
+        	    while (prev != null && head != null){
+         		if(prev.val!=head.val){
+                	   flag = false;
+             	           break;
+           	        }
+            	        prev =  prev.next;
+            	        head = head.next; 
+       		   }
+       
+     	  	   return flag;  
+        
+    		}
+	      }
+
+
+
+
